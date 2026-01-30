@@ -94,7 +94,7 @@ class LiffClient {
    */
   getDecodedIdToken(): LiffDecodedIdToken | null {
     this.ensureInitialized();
-    return liff.getDecodedIDToken();
+    return liff.getDecodedIDToken() as LiffDecodedIdToken | null;
   }
 
   /**
@@ -170,7 +170,7 @@ class LiffClient {
       throw new Error('sendMessages only works in LINE app');
     }
 
-    await liff.sendMessages(messages);
+    await liff.sendMessages(messages as any);
   }
 
   /**
@@ -195,7 +195,7 @@ class LiffClient {
       throw new Error('shareTargetPicker is not available');
     }
 
-    const result = await liff.shareTargetPicker(messages, { isMultiple });
+    const result = await liff.shareTargetPicker(messages as any, { isMultiple });
     return result as ShareTargetPickerResult | null;
   }
 
@@ -204,7 +204,7 @@ class LiffClient {
    */
   async scanCode(): Promise<ScanCodeResult> {
     this.ensureInitialized();
-    return await liff.scanCodeV2();
+    return await liff.scanCodeV2() as ScanCodeResult;
   }
 
   /**
@@ -251,7 +251,7 @@ class LiffClient {
    */
   async queryPermission(permission: string): Promise<PermissionState> {
     this.ensureInitialized();
-    return await liff.permission.query(permission);
+    return await liff.permission.query(permission as any);
   }
 
   /**
@@ -281,7 +281,7 @@ class LiffClient {
       throw new Error('Add to home screen is not available');
     }
 
-    await liff.createShortcutOnHomeScreen();
+    await (liff.createShortcutOnHomeScreen as any)();
   }
 
   /**

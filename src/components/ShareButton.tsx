@@ -6,7 +6,7 @@
 
 import React, { useState } from 'react';
 import { useLiffMessages } from '@/lib/liff';
-import type { FlexMessage } from '@/lib/liff';
+import type { FlexMessage, LiffMessage } from '@/lib/liff';
 import styles from './ShareButton.module.css';
 
 interface ShareButtonProps {
@@ -36,7 +36,7 @@ export function ShareButton({
           ? [{ type: 'text' as const, text: message }]
           : [message];
 
-      const result = await shareMessage(messages);
+      const result = await shareMessage(messages as LiffMessage[]);
 
       if (result?.status === 'success') {
         setShared(true);
