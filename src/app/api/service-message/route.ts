@@ -3,7 +3,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { createServiceMessageClient } from '@/lib/service-message';
+import { createServiceMessageClient, ServiceMessageParams } from '@/lib/service-message';
 
 const serviceMessageClient = createServiceMessageClient({
   channelId: process.env.LINE_CHANNEL_ID || '',
@@ -17,7 +17,7 @@ interface IssueTokenRequest {
 interface SendMessageRequest {
   notificationToken: string;
   templateName: string;
-  params: Record<string, unknown>;
+  params: ServiceMessageParams;
 }
 
 // POST /api/service-message/token - Issue notification token
