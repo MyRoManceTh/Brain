@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(npm run dev)",
+      "Bash(timeout:*)",
+      "Bash(ping:*)",
+      "Bash(npm install)",
+      "Bash(npx next dev)",
+      "Bash(npx next dev:*)",
+      "Bash(set NEXT_DISABLE_TURBOPACK=1)",
+      "Bash(npx next@14 dev)",
+      "Bash(xcopy:*)",
+      "Bash(robocopy:*)",
+      "Bash(cmd /c \"robocopy \"\"g:\\\\My Drive\\\\Vibe\\\\linemini\"\" \"\"C:\\\\linemini\"\" /E /XD node_modules .next\")",
+      "Bash(powershell:*)"
+    ]
+  }
+}

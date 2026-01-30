@@ -1,0 +1,78 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #00b900;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: #00a000;
+}
+
+.button:active:not(:disabled) {
+  background: #009000;
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success {
+  background: #4caf50;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loading::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.successText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.successText::before {
+  content: '✓';
+  font-size: 18px;
+}
+
+.error {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #ff5252;
+}

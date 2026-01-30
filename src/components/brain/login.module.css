@@ -1,0 +1,247 @@
+/* Login Screen Styles */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: linear-gradient(135deg, #f8fff8 0%, #e8f5e9 100%);
+}
+
+.content {
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 24px;
+}
+
+.logoIcon {
+  font-size: 72px;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 32px 0;
+}
+
+.description {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.description p {
+  margin: 0 0 16px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: left;
+}
+
+.features li {
+  font-size: 14px;
+  color: #666;
+  padding: 8px 12px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.error {
+  background: #fff0f0;
+  color: #e53935;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #00b900;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 185, 0, 0.3);
+}
+
+.loginButton:hover {
+  background: #00a000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 185, 0, 0.4);
+}
+
+.loginButton:active {
+  transform: translateY(0);
+}
+
+.loginButton:disabled {
+  background: #ccc;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.lineIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.loadingText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loadingText::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.privacyNote {
+  margin: 16px 0 0 0;
+  font-size: 12px;
+  color: #999;
+}
+
+.footer {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* User Profile Header */
+.userHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.userAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00b900;
+}
+
+.userAvatarPlaceholder {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00b900 0%, #00d100 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.userInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userStatus {
+  font-size: 12px;
+  color: #888;
+  margin: 2px 0 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logoutButton {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #fff;
+  color: #666;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
